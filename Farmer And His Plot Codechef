@@ -1,0 +1,21 @@
+#include <stdio.h>
+ 
+int gcd(int i,int j)
+{
+	if(j==0)
+	return i;
+	else
+	return gcd(j,i%j);
+}
+ 
+int main(void) 
+{
+	int t,m,n,ans;
+	scanf("%d",&t);
+	while(t--)
+	{
+		scanf("%d%d",&m,&n);
+		ans=gcd(m,n);
+		printf("%d\n",(m*n)/(ans*ans));
+	}
+	return 0;
