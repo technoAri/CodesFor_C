@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+int main(void) {
+	int t,num,i,lim;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    scanf("%d",&num);
+	    if(num<2)
+	        printf("no\n");
+        else
+        {
+            lim=sqrt(num);
+            for(i=2;i<=lim;i++)
+                if(num%i==0)
+                    break;
+            i>lim ? printf("yes\n") : printf("no\n");
+        }
+	}
+	return 0;
+}
