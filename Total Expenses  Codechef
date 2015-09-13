@@ -1,0 +1,27 @@
+#include<stdio.h>
+ 
+int main()
+{
+    int t=0;
+    float q=0,p=0;
+    float total;
+ 
+    scanf("%d",&t);
+ 
+    while(t--)
+    {
+        scanf("%f%f",&q,&p);
+ 
+        if(q >= 1000)
+        {
+            total = q * p * .90;
+            printf("%.6f\n",(q * p * .90));
+        }
+        else
+        {
+            total = q * p;
+            printf("%.6f\n",(q * p));
+        }
+    }
+    return 0;
+}
