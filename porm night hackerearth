@@ -1,0 +1,54 @@
+#include <stdio.h>  
+#define MAX 1000000  
+  
+int main()  
+{  
+    int t,i=0,j=0,count=0,temp,M,N;  
+    int boy[MAX],girl[MAX];  
+    scanf("%d",&t);  
+    while(t--)  
+    {  
+     scanf("%d %d",&M,&N);  
+     for(i=0;i<M;i++)  
+      scanf("%d",&boy[i]);  
+     for(i=0;i<N;i++)  
+      scanf("%d",&girl[i]);  
+     for(i=0;i<M;i++)  
+     {  
+      for(j=i+1;j<M;j++)  
+      {  
+       if(boy[i]>boy[j])  
+       {  
+        temp=boy[i];  
+        boy[i]=boy[j];  
+        boy[j]=temp;  
+       }  
+      }  
+     }  
+     for(i=0;i<M;i++)  
+     {  
+      for(j=i+1;j<M;j++)  
+      {  
+       if(girl[i]>girl[j])  
+       {  
+        temp=girl[i];  
+        girl[i]=girl[j];  
+        girl[j]=temp;  
+       }  
+      }  
+     }  
+     for(i=0;i<M;i++)  
+     {  
+      for(j=0;j<N;j++)  
+      {  
+       if(girl[j]<boy[i])  
+       count++;  
+      }  
+     }  
+     if(count>=M)  
+     printf("YES\n");  
+     else  
+     printf("NO\n");  
+    }  
+    return 0;  
+}  
